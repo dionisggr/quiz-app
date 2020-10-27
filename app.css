@@ -1,0 +1,197 @@
+/* Your styles should be mobile-first and responsive */
+
+/** 
+  * If you are unclear on how to utilize a mobile-first, responsive technique to write your CSS, here is an example: 
+  *
+  * https://github.com/andreacardybailey/responsive_example/blob/master/styles/responsive-base.css 
+  *
+*/
+html{
+  height:100%;
+}
+body{
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRLZboQEMn4MON9QwopQWPAYYBev-0B0lmlBw&usqp=CAU');
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+.title{
+  font-size-adjust: .5;
+  font-size:32px;
+  padding-left: 8px;
+  color: white;
+  text-shadow: 2px 4px 5px black;
+  font-family: 'Varela', sans-serif;
+
+}
+.tracker{
+  font-size:4vw;
+  padding: 15px 25px;
+  padding-left: 8px;
+  font-family: 'Varela', sans-serif;
+
+}
+h3{
+  font-size-adjust: inherit;
+  font-size:32px;
+  color:white;
+  text-shadow: 2px 2px black;
+}
+label{
+  font-size-adjust: inherit;
+  font-size: 16px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 200px;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(249,249,249,1) 72%, rgba(13,37,245,1) 100%);
+    border: solid;
+    box-shadow: 2px 2px black;
+    border-width: 1px;
+    border-radius: 8px;
+    font-family: 'Varela', sans-serif;
+    font-weight: bold;
+    padding: 25px 10%;
+    margin: 25px 10px;
+    font-size: 4vw; 
+  }
+
+.group{
+  display:flex;
+  flex-direction: column;
+}
+form.radioItem{
+  /*border:solid;*/
+  margin-right: 20px;
+  justify-content: space-around;
+  transform:scale(1.1);
+}
+button {
+  padding: 15px 25px;
+  border-radius: 5px;
+  }
+
+.questions-counter {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.questions-counter label {
+  padding-bottom: 10px;
+}
+  
+
+@media all and (min-width: 800px) {
+
+  label {
+  padding-bottom: 35px;
+  }
+
+  h3 {
+    padding-left: 25px;
+  }
+
+
+  .title{
+  height: 150px;
+  width: 90%;
+  padding-left: 30px;
+  font-family: 'Varela', sans-serif;
+
+  }
+
+  .next-question-form {
+    margin-top: 225px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+
+  }
+
+  #js-quiz-start-form {
+    margin-top: 225px;
+  }
+
+  #finished-form {
+    margin-top: 225px;
+  }
+
+  .tracker{
+    font-size:4vw;
+    padding: 15px 25px;
+    padding-left: 8px;
+    font-family: 'Varela', sans-serif;
+
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 70%;
+    min-height: 200px;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(249,249,249,1) 72%, rgba(13,37,245,1) 100%);
+    border: solid;
+    border-width: 1px;
+    border-radius: 8px;
+    font-family: 'Varela', sans-serif;
+    font-weight: bold;
+    padding: 25px;
+    margin: 25px 10px;
+    font-size: 2vw;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+
+  form label {
+    font-size: 1.5vw;
+    margin: 10px;
+  }
+
+  .group{
+    display:flex;
+    flex-direction: column;
+  }
+  
+  form.radioItem{
+    margin-right: 20px;
+    justify-content: space-around;
+    transform:scale(1.1);
+  }
+
+  button {
+    padding: 15px 25px;
+    border-radius: 5px;
+    }
+
+  button, input {
+    margin-top: 20px;
+  }
+
+  .continue {
+    transform: scale(0.85);
+    margin-bottom: 20px;
+  }
+
+  .question-submit {
+    transform: scale(0.65);
+  }
+  
+}
+
+@media all and (max-width: 400px) {
+  .questions-counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  form {
+    font-size-adjust: 3;
+  }
+}
