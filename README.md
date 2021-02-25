@@ -18,7 +18,7 @@ https://dionisggr.github.io/quiz-app/
 ---
 
 ### Technology
-* **Front-End:** HTML5, CSS3, Javascript
+* **Front-End:** HTML5, CSS3, Javascript, JQuery
 
 ---
 
