@@ -26,6 +26,7 @@ https://dionisggr.github.io/quiz-app/
 The app's functionality includes:
 * Any User
   * May browse browse and answer questions to test their knowledge
+  * May keep track of current and total scores
     
 ---
 
