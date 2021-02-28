@@ -31,25 +31,25 @@ The app's functionality includes:
 ---
 
 ### Screenshots
-Welcome Page
+Landing Page
 :-------------------------:
-![Welcome Page]()
+![Landing Page](/img/screenshots/landing.png)
 
 Question Page
 :-------------------------:
-![Question Page]()
+![Question Page](/img/screenshots/question.png)
 
 Correct Answer
 :-------------------------:
-![Correct Answer]()
+![Correct Answer](/img/screenshots/correct.png)
 
 Incorrect Answer
 :-------------------------:
-![Incorrect Answer]()
+![Incorrect Answer](/img/screenshots/incorrect.png)
 
 End Page
 :-------------------------:
-![End Page]()
+![End Page](/img/screenshots/finished.png)
 
 ---
 

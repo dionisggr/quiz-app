@@ -201,7 +201,7 @@ function handlePlayAgain() {
 function renderBackground() {
   $('html').append(
     `<div class="background">
-      <img src="/img/background2.jpg" alt="background" />
+      <img src="/img/background.jpg" alt="background" />
     </div>`
   );
 }
