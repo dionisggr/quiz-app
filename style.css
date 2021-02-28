@@ -198,11 +198,14 @@ label.wrong {
   color: rgb(228, 0, 0);
   margin: 10px 0 35px 0;
   font-size: 6vmin;
+  width: 100%;
+  text-align: center;
 }
 
 label.wrong-extra {
   color: rgb(92, 0, 92);
-  font-size: 4vmin;
+  font-size: 4.5vmin;
+  /* border: solid red; */
 }
 
 label.wrong-extra:nth-of-type(3) {
@@ -216,7 +219,6 @@ label.wrong-extra:nth-of-type(3) {
 
 .questions-counter {
   font-weight: bold;
-  /* border: solid red; */
   width: 90%;
 }
 
@@ -306,6 +308,10 @@ footer a {
 
   label.correct {
     font-size: 3.7vh;
+  }
+
+  label.wrong {
+    font-size: 4vh;
   }
 
   label.wrong-extra {
