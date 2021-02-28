@@ -45,7 +45,7 @@ Correct Answer
 
 Incorrect Answer
 :-------------------------:
-![Incorrect Answer](/img/screenshots/incorrect.png)
+![Incorrect Answer](/img/screenshots/wrong.png)
 
 End Page
 :-------------------------:
