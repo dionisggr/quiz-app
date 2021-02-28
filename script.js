@@ -59,7 +59,7 @@ const store={
         'LOL',
         'Never gonna let you down...'
       ],
-      correctAnswer: 'Never gonna let you down'
+      correctAnswer: 'Never gonna let you down...'
     },
     {
       question: 'Who is the main character in "The Office"',
@@ -182,8 +182,8 @@ function resetVariables() {
 function renderFinish() {
   $('main').html(
     `<form id="finished-form">
-      <label for="finished-label">YOU FINISHED!<div class=finished>
-      <p>${store.score}/${store.questions.length} questions correct!</p></div></label>
+      <label>YOU FINISHED!</label>
+      <p>${store.score}/${store.questions.length} questions correct!</p>
       <button>Play again!</button>
     </form>`
   );

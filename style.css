@@ -215,6 +215,28 @@ label.wrong-extra:nth-of-type(3) {
   font-weight: bold;
 }
 
+#finished-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid red;
+}
+
+#finished-form label {
+  font-weight: bold;
+  font-size: 3vw;
+  margin: 2vw 0 4vw 0;
+}
+
+#finished-form p {
+  font-size: 2.7vw;
+  margin-bottom: 7%;
+}
+
+#finished-form button {
+  margin-bottom: 5%;
+}
+
 footer {
   display: flex;
   flex-direction: column;
@@ -314,6 +336,19 @@ footer a {
   }
 
   footer a {
+    font-size: 4vh;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  #finished-form p {
+    font-size: 3vh;
+  }
+}
+
+
+@media only screen and (min-width: 1000px) {
+  #finished-form label {
     font-size: 4vh;
   }
 }
