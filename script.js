@@ -22,7 +22,7 @@ const store={
       correctAnswer: 'Banana stand'
     },
     {
-      question: 'What is Star Wars day?',
+      question: 'When is Star Wars day?',
       answers: [
         'March 14th',
         'May 4th',
@@ -100,7 +100,7 @@ function renderStart() {
   $('main').empty();
   $('main').append(
     `<form class="start-form">
-      <h3>Meme Enough?</h3>
+      <h3>Are you ready?</h3>
       <button type="submit">BEGIN</button>
     </form>`
   );
@@ -209,7 +209,7 @@ function renderBackground() {
 function renderHeader() {
   $('main').before(
     `<header>
-      <h1>Quiz App: Meme Generation</h1>
+      <h1>Quiz App: Millenial Mayhem</h1>
     </header>`
   );
 }

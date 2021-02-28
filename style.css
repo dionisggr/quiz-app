@@ -111,6 +111,7 @@ form h3 {
   font-weight: 500;
   font-size: 4.5vmin;
   margin-top: 15px;
+  padding: 0 5%;
 }
 
 .question-form ul {
@@ -119,10 +120,10 @@ form h3 {
   padding-left: 0;
   list-style-type: none;
   width: fit-content;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 2.5vw auto;
   width: 90%;
   min-width: 300px;
+  padding: 0 5%;
 }
 
 .question-form li {
@@ -196,10 +197,12 @@ label.wrong {
   font-weight: bold;
   color: rgb(228, 0, 0);
   margin: 10px 0 35px 0;
+  font-size: 6vmin;
 }
 
 label.wrong-extra {
   color: rgb(92, 0, 92);
+  font-size: 4vmin;
 }
 
 label.wrong-extra:nth-of-type(3) {
@@ -213,6 +216,8 @@ label.wrong-extra:nth-of-type(3) {
 
 .questions-counter {
   font-weight: bold;
+  /* border: solid red; */
+  width: 90%;
 }
 
 #finished-form {
@@ -224,7 +229,7 @@ label.wrong-extra:nth-of-type(3) {
 #finished-form label {
   font-weight: bold;
   font-size: 3vw;
-  margin: 2vw 0 4vw 0;
+  margin: 2vw 0;
 }
 
 #finished-form p {
@@ -286,7 +291,7 @@ footer a {
     margin-left: 25px;
   }
 
-  .question-form label:not(.group label) {
+  .question-form label:not(.group label, .questions-counter label) {
     font-size: 3vh;
     margin: 2vw 0;
   }
@@ -303,8 +308,12 @@ footer a {
     font-size: 3.7vh;
   }
 
+  label.wrong-extra {
+    font-size: 2.2vh;
+  }
+
   .questions-counter label {
-    font-size: 3.5vmin;
+    font-size: 2vh;
   }
 
   footer h2 {
@@ -316,10 +325,6 @@ footer a {
 @media only screen and (min-width: 600px) {
   label.correct {
     margin-bottom: 8vh;
-  }
-
-  .questions-counter label {
-    font-size: 3vmin;
   }
 
   footer {
