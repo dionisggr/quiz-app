@@ -201,7 +201,7 @@ function handlePlayAgain() {
 function renderBackground() {
   $('html').append(
     `<div class="background">
-      <img src="/img/background.jpg" alt="background" />
+      <img src="https://github.com/dionisggr/quiz-app/blob/main/img/background.jpg" alt="background" />
     </div>`
   );
 }
