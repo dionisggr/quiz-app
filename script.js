@@ -34,10 +34,10 @@ const store = {
     {
       question: 'What is the answer to life, the universe and everything?',
       answers: [
-        'Come on...',
+        'What?',
+        '42',
         '1',
-        '69',
-        '42'
+        '69'
       ],
       correctAnswer: '42'
     },
@@ -56,8 +56,8 @@ const store = {
       answers: [
         'Let the rains down in Africa',
         'YOLO',
-        'Never gonna let you down...',
-        'LOL'
+        'LOL',
+        'Never gonna let you down...'
       ],
       correctAnswer: 'Never gonna let you down'
     },
@@ -67,16 +67,16 @@ const store = {
         'Stanley Hudson',
         'Michael Scott',
         'Walter White',
-        'Morty Smith'
+        'Creed Bratton'
       ],
       correctAnswer: 'Michael Scott'
     },
     {
       question: 'SpongeBob created _____ in the episode “Frankendoodle”',
       answers: [
-        'Sheldon J. Plankton',
-        'SpongeGar',
         'DoodleBob',
+        'SpongeGar',
+        'Sheldon J. Plankton',
         'Gary the Snail'
       ],
       correctAnswer: 'DoodleBob'
@@ -97,9 +97,10 @@ let correctAnswer = store.questions[index].correctAnswer;
 
 // Show start screen
 function renderStart() {
-  $('main').html(
+  $('main').empty();
+  $('main').append(
     `<form class="start-form">
-      <label">Are You Meme Enough???</label>
+      <h3>Meme Enough?</h3>
       <button type="submit">BEGIN</button>
     </form>`
   );
@@ -196,25 +197,94 @@ function handlePlayAgain() {
   })
 }
 
+// Background as separate image to manage gradient
+function renderBackground() {
+  $('html').append(
+    `<div class="background">
+      <img src="/img/background2.jpg" alt="background" />
+    </div>`
+  );
+}
+
+function renderHeader() {
+  $('main').before(
+    `<header>
+      <h1>Quiz App: Meme Generation</h1>
+    </header>`
+  );
+}
+
+function renderFooter() {
+  $('main').after(
+    `<footer id="footer">
+      <div class='icons'>
+        <a href="mailto:dionisggr@gmail.com"
+          target="_blank"
+          rel='noreferrer'
+          aria-label="email"
+        >
+          <i class="fa fa-envelope"
+            aria-hidden="true">
+          </i>
+        </a>
+
+        <a href="https://github.com/dionisggr/spaced-repetition/"
+          target="_blank"
+          rel='noreferrer'
+          aria-label="github"
+        > 
+          <i
+            class="fa fa-github"
+            aria-hidden="true">
+          </i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/dionis-gonzalez-ramirez/"
+          target="_blank"
+          rel='noreferrer'
+          aria-label="linked-in"
+        > 
+          <i
+            class="fa fa-linkedin-square"
+            aria-hidden="true">
+          </i>
+        </a>
+      </div>
+      
+      <h2>&copy; Dionis Gonzalez</h2>
+    </footer>`
+  );
+}
+
 // Screen to show question
 function render() {
   $('main').html(
     `<form class="question-form">
       <label>Pick an answer:</label>
-      <div class = "group">
-        <div class = "questionItem">
+      <div class="group">
+        <div class="question-item">
           <label>${question}</label>
-          <div class = "radioItem"><input type="radio" name="color" value="${answers[0]}" required>
-          <label for="other">${answers[0]}</label></div>
-          <div class = "radioItem"><input type="radio" name="color" value="${answers[1]}">
-          <label for="female">${answers[1]}</label></div>
-          <div class = "radioItem"><input type="radio" name="color" value="${answers[2]}">
-          <label for="other">${answers[2]}</label></div>
-          <div class = "radioItem"><input type="radio" name="color" value="${answers[3]}">
-          <label for="other">${answers[3]}</label></div>
+          <ul>
+            <li>
+              <input type="radio" id="answer_1" name="answer" value="${answers[0]}" required>
+              <label for="answer_1">${answers[0]}</label>
+            </li>
+            <li>
+              <input type="radio" id="answer_2" name="answer" value="${answers[1]}">
+              <label for="answer_2">${answers[1]}</label>
+            </li>
+            <li>
+              <input type="radio" id="answer_3" name="answer" value="${answers[2]}">
+              <label for="answer_3">${answers[2]}</label>
+            </li>
+            <li>
+              <input type="radio" id="answer_4" name="answer" value="${answers[3]}">
+              <label for="answer_4">${answers[3]}</label>
+            </li>
+          </ul>
         </div>
-        <div class = tracker><button type="submit" class="question-submit">Submit</button></div>
       </div>
+      <button type="submit" class="question-submit">Submit</button>
       <div class=questions-counter>
         <label>Question ${index+1} of ${store.questions.length}</label>
         <label>${store.score} out of ${index} correct</label>
@@ -225,7 +295,10 @@ function render() {
 
 //Main function
 function main() {
+  renderBackground();
+  renderHeader();
   renderStart();
+  renderFooter();
   handleStart();
   handleAnswer();
   handleNextQuestion();
