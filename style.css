@@ -70,6 +70,7 @@ form {
   color: rgb(68, 1, 68);
   padding: 15px;
   max-width: 800px;
+  width: 90%;
 }
 
 form button {
