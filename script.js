@@ -1,5 +1,5 @@
 // main object
-const store = {
+const store={
   questions: [
     {
       question: 'Which pop star burnt down her home gym with candles?',
@@ -90,10 +90,10 @@ const store = {
 };
 
 // Variables
-let index = store.questionNumber;
-let question = store.questions[index].question;
-let answers = store.questions[index].answers;
-let correctAnswer = store.questions[index].correctAnswer;
+let index=store.questionNumber;
+let question=store.questions[index].question;
+let answers=store.questions[index].answers;
+let correctAnswer=store.questions[index].correctAnswer;
 
 // Show start screen
 function renderStart() {
@@ -117,7 +117,7 @@ function handleStart() {
 // Assign handler to question response
 function handleAnswer() {
   $('main').on('submit', '.question-form', function(evt) {
-    let selection = $('input:checked').val();
+    let selection=$('input:checked').val();
     (selection === correctAnswer) ? renderCorrect() : renderWrong();
   })
 }
@@ -126,7 +126,7 @@ function handleAnswer() {
 function renderCorrect() {
   $('main').html(
     `<form class="next-question-form">
-      <label for="next-question-label">CORRECT!</label>
+      <label class="correct">CORRECT!</label>
       <button type="submit" class="continue">Continue</button>
       <div class=questions-counter>
         <label>Question ${index+1} of ${store.questions.length}</label>
@@ -140,9 +140,9 @@ function renderCorrect() {
 function renderWrong() {
   $('main').html(
     `<form class="next-question-form">
-      <label>Wrong T_T</label>
-      <label>The correct answer is:</label>
-      <label>${correctAnswer}</label>
+      <label class="wrong">Wrong T_T</label>
+      <label class="wrong-extra">The correct answer is:</label>
+      <label class="wrong-extra">${correctAnswer}</label>
       <button type="submit" class="continue">Continue</button>
       <div class=questions-counter>
         <label>Question ${index+1} of ${store.questions.length}</label>
@@ -157,9 +157,9 @@ function handleNextQuestion() {
   $('main').on('submit', '.next-question-form', function(evt) {
     index++;
     try {
-      question = store.questions[index].question;
-      answers = store.questions[index].answers;
-      correctAnswer = store.questions[index].correctAnswer;
+      question=store.questions[index].question;
+      answers=store.questions[index].answers;
+      correctAnswer=store.questions[index].correctAnswer;
       render();
     } catch(e) {
       renderFinish();
@@ -182,7 +182,7 @@ function resetVariables() {
 function renderFinish() {
   $('main').html(
     `<form id="finished-form">
-      <label for="finished-label">YOU FINISHED!<div class = finished>
+      <label for="finished-label">YOU FINISHED!<div class=finished>
       <p>${store.score}/${store.questions.length} questions correct!</p></div></label>
       <button>Play again!</button>
     </form>`
@@ -191,7 +191,7 @@ function renderFinish() {
 
 // Assign handler to Play Again submit
 function handlePlayAgain() {
-  $('main').on('submit', '#finished-form', evt => {
+  $('main').on('submit', '#finished-form', () => {
     resetVariables();
     renderStart();
   })
@@ -212,6 +212,12 @@ function renderHeader() {
       <h1>Quiz App: Meme Generation</h1>
     </header>`
   );
+}
+
+function handleHeader() {
+  $('header h1').on('click', function () {
+    renderStart();
+  });
 }
 
 function renderFooter() {
@@ -299,6 +305,7 @@ function main() {
   renderHeader();
   renderStart();
   renderFooter();
+  handleHeader();
   handleStart();
   handleAnswer();
   handleNextQuestion();

@@ -21,7 +21,6 @@ html {
 body {
   height: 100%;
   max-height: fit-content;
-  /* overflow: hidden; */
 }
 
 button {
@@ -50,7 +49,6 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 20px 0 10px;
   height: 18vw;
   max-height: 95px;
   width: 100%;
@@ -107,9 +105,10 @@ form h3 {
 
 .question-form .group label:not(li label) {
   display: flex;
+  justify-content: center;
   text-align: center;
   font-weight: 500;
-  font-size: 2.5vmax;
+  font-size: 4.5vmin;
   margin-top: 15px;
 }
 
@@ -128,38 +127,36 @@ form h3 {
 .question-form li {
   display: flex;
   align-items: center;
-  width: 50%;
-  padding-left: 10px;
+  width: 100%;
   line-height: 2em;
-  border: solid 2px rgba(19, 0, 19, 0.137);
+  border: solid 2px rgba(43, 0, 43, 0.192);
 }
 
-.question-form li:hover {
+.question-form li:hover, .question-form li > *:hover {
   background-color: rgba(4, 182, 4, 0.226);
+  cursor: pointer;
 }
 
-.question-form li:nth-of-type(2n) {
-  border-left: none;
-}
-
-.question-form li:nth-of-type(n+3) {
+.question-form li:nth-of-type(n+2) {
   border-top: none;
 }
 
 .question-item label {
   font-size: 4vw;
+  width: 100%;
+}
+
+.question-item li input {
+  transform: scale(1.20);
+  width: 25%;
 }
 
 .question-item ul label {
   text-align: center;
   font-size: 4.5vw;
   font-weight: 500;
-}
-
-.question-item li input {
-  border: solid red;
-  transform: scale(1.15);
-  margin-right: 5vw;
+  width: 100%;
+  padding-right: calc(35% / 2);
 }
 
 .question-form button {
@@ -179,6 +176,42 @@ form h3 {
 
 .questions-counter label {
   font-size: 4.2vw;
+}
+
+.next-question-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label.correct {
+  font-weight: bold;
+  color: rgb(0, 94, 0);
+  margin: 10px 0 10vw 0;
+  font-size: 6vmin;
+}
+
+label.wrong {
+  font-weight: bold;
+  color: rgb(228, 0, 0);
+  margin: 10px 0 35px 0;
+}
+
+label.wrong-extra {
+  color: rgb(92, 0, 92);
+}
+
+label.wrong-extra:nth-of-type(3) {
+  margin-bottom: 25px;
+}
+
+.next-question-form button {
+  height: 35px;
+  margin-bottom: 50px;
+}
+
+.questions-counter {
+  font-weight: bold;
 }
 
 footer {
@@ -237,8 +270,20 @@ footer a {
   }
 
   .question-form .group label:not(li label) {
-      font-size: 2.3vh;
-    }
+    font-size: 2.3vh;
+  }
+
+  .question-item ul label {
+    font-size: 2.3vh;
+  }
+
+  label.correct {
+    font-size: 3.7vh;
+  }
+
+  .questions-counter label {
+    font-size: 3.5vmin;
+  }
 
   footer h2 {
     font-size: 2.3vh;
@@ -247,7 +292,15 @@ footer a {
   
 
 @media only screen and (min-width: 600px) {
-    footer {
+  label.correct {
+    margin-bottom: 8vh;
+  }
+
+  .questions-counter label {
+    font-size: 3vmin;
+  }
+
+  footer {
     flex-direction: row-reverse;
     justify-content: space-between;
     max-height: 10px;
