@@ -209,7 +209,7 @@ function renderBackground() {
 function renderHeader() {
   $('main').before(
     `<header>
-      <h1>Quiz App: Millenial Mayhem</h1>
+      <h1>Quiz App: Millennial Mayhem</h1>
     </header>`
   );
 }
