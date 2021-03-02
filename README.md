@@ -6,7 +6,7 @@ The Quiz App challenges your modern culture knowledge with questions ranging fro
 #### Live:
 https://dionisggr.github.io/quiz-app/
 
----
+--
 
 ### User Stories
 - As a visitor
